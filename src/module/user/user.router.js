@@ -1,0 +1,12 @@
+import { Router } from "express";
+import * as userController from "./controller/user.controller.js";
+import { auth } from "../../middleware/auth.js";
+import { endPoint } from "./user.endpoint.js";
+const router = Router();
+router.get("/:id", auth(endPoint.getAll), userController.profile);
+router.patch("/changePassword/:id", userController.changePassword);
+router.patch("/changeEmail/:id", userController.changeEmail);
+router.patch("/changeProfile/:id", userController.changeInfo);
+router.post("/addInterests/:id", userController.addInterests);
+router.post("/userSearch/:id", userController.userSearch);
+export default router;
