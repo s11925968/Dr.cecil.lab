@@ -1,3 +1,4 @@
+import { data } from "@tensorflow/tfjs";
 import mongoose, { Schema, model, Types } from "mongoose";
 const userSchema = new Schema(
   {
@@ -12,9 +13,9 @@ const userSchema = new Schema(
       type: Number,
     },
     dateOfBirth: {
-      type: String,
-     required:true,
-    },
+      type: Date,
+      required: true,
+    },    
     email: {
       type: String,
       required: true,
