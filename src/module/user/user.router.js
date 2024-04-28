@@ -7,6 +7,4 @@ router.get("/:id", auth(endPoint.getAll), userController.profile);
 router.patch("/changePassword/:id", userController.changePassword);
 router.patch("/changeEmail/:id", userController.changeEmail);
 router.patch("/changeProfile/:id", userController.changeInfo);
-router.post("/addInterests/:id", userController.addInterests);
-router.post("/userSearch/:id", userController.userSearch);
 export default router;

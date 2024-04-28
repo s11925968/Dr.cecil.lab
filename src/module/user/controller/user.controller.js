@@ -8,7 +8,7 @@ export const profile = async (req, res) => {
   const user = await userModel.findById(id);
 
   return res.status(200).json({ message: "success", user });
-};
+}; 
 
 export const changePassword = async (req, res) => {
   const { id } = req.params;
@@ -68,8 +68,8 @@ export const changeInfo = async (req, res) => {
     if (req.body.name) {
       user.userName = req.body.name;
     }
-    if (req.body.age) {
-      user.age = req.body.age;
+    if (req.body.country) {
+      user.country = req.body.country;
     }
 
     await user.save();
